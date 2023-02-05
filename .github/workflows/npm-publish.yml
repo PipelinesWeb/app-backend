@@ -12,9 +12,14 @@ env:
   RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
   
 jobs:
-  
-  deploy:
-    name: Build app and run tests
+
+  build-test:
+    name: Run Tests
+    uses: PipelinesWeb/app-frontend/.github/workflows/test.yml@main
+    
+  deploy-production:
+    name: Deploy to production Railway
+    needs: build-test
     runs-on: ubuntu-latest
     strategy:
       matrix:
