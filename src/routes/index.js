@@ -12,7 +12,7 @@ admin.initializeApp({
 
 const db = admin.database();
 
-router.post("/registrar", async (req, res) => {
+router.post("/registrar-material", async (req, res) => {
   try {
     const { nombre, cantidad } = req.body;
 
@@ -33,6 +33,11 @@ router.post("/registrar", async (req, res) => {
     console.error("Error al registrar el material:", error);
     res.status(500).json({ error: "Error al registrar el material" });
   }
+});
+
+// Ruta GET
+router.get("/test", (req, res) => {
+  res.status(200).send("Hello world");
 });
 
 module.exports = router;
