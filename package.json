@@ -2,17 +2,21 @@
   "name": "app-backend",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
-    "dev": "nodemon server.js",
-    "start": "node server.js",
+    "dev": "nodemon src/index.js",
+    "start": "node src/index.js",
     "test": "jest src/app.test.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^16.3.1",
     "express": "^4.18.2",
+    "express-handlebars": "^7.0.7",
+    "firebase": "^9.23.0",
+    "firebase-admin": "^11.9.0",
     "morgan": "^1.10.0"
   },
   "devDependencies": {

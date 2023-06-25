@@ -9,7 +9,20 @@ on:
     branches: [ "develop" ]
 
 jobs:
+  test:
+    runs-on: ubuntu-latest
 
-  build-test:
-    name: Run Tests
-    uses: PipelinesWeb/app-frontend/.github/workflows/test.yml@main
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run tests
+        run: npm test
