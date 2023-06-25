@@ -1,6 +1,8 @@
-const app =  require( "./app");
-const port = process.env.PORT || 3000;
+const app = require("./app");
 
-app.listen(port, () =>
-  console.log('Example app listening on port 3000!'),
-);
+async function main() {
+  app.listen(3000);
+  console.log("Server on port", 3000);
+}
+
+main();
