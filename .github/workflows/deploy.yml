@@ -15,11 +15,11 @@ on:
 
 jobs:
 
-  test:
-    name: Run Tests
-    uses: ./.github/workflows/test.yml
-
   deploy:
+
+    needs: test
+    if: github.event.workflow_run.conclusion == 'success'
+
     runs-on: ubuntu-latest
 
     strategy:
